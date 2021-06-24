@@ -56,6 +56,12 @@ header p {
   color: var(--color-primary);
 }
 
+.output strong::after {
+  content: ":";
+  color: #aaa;
+  margin: 0 0.5rem 0 0.1rem;
+}
+
 label {
   box-sizing: border-box;
   display: block;
@@ -73,6 +79,12 @@ input {
   border-bottom: 1px solid #eee;
   font-family: Nunito;
   font-size: 16px;
+}
+
+input:disabled {
+  user-select: none;
+  font-weight: bold;
+  color: #333;
 }
 
 button {
