@@ -33,6 +33,7 @@ socket.on("chat", data => {
   output.appendChild(chatMessage.cloneNode(true));
 });
 
+// Listen typing event
 socket.on("typing", data => {
   feedback.textContent = `${data} is typing a message`;
 });

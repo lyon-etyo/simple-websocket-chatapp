@@ -13,13 +13,13 @@ app.use(express.static("public"));
 // Socket setup
 const io = socket(server);
 
+// establish socket connection
 io.on("connection", socket => {
-  console.log("Made socket connection", socket.id);
-
+  // emit chat events
   socket.on("chat", data => {
     io.sockets.emit("chat", data);
   });
-
+  // broadcast someone typing
   socket.on("typing", data => {
     socket.broadcast.emit("typing", data);
   });
